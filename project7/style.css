@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: #000;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards {
+  display: flex;
+  gap: 40px;
+}
+
+.card {
+  --clr: #ffffff;
+  width: 260px;
+  cursor: pointer;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 15px;
+  background:
+    linear-gradient(black, black) padding-box,
+    conic-gradient(from var(--rotate), black, var(--clr), black) border-box;
+  border: 3px solid transparent;
+  --rotate: 0deg;
+  animation: borderAnimate 5s linear infinite paused;
+  transition: .3s;
+}
+
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes borderAnimate {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}
+
+
+.card img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.card h2 {
+  font-size: 1.1rem;
+  margin-top: 10px;
+  color: #ddd;
+}
+
+.card p {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #ddd;
+}
+
+.card.red   { --clr: #ff0055; }
+.card.blue  { --clr: #0d87ff; }
+.card.green { --clr: #35ff4b; }
+
+.card:hover {
+  animation-play-state: running;
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px var(--clr);
+}
+
+.card:hover h2,
+.card:hover p {
+  color: var(--clr);
+  text-shadow: 0 0 6px var(--clr);
+}
+
