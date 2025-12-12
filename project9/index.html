@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Weather Dashboard — Pixel UI (Dark/Day)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="root" class="theme-dark">
+    <aside class="sidebar">
+      <div class="brand"><div class="logo">W</div></div>
+
+      <nav class="side-nav">
+        <button class="side-btn active" title="Weather">☁️</button>
+        <button class="side-btn" title="Map">🗺️</button>
+        <button class="side-btn" title="Widgets">▦</button>
+        <button class="side-btn" title="Settings">⚙️</button>
+      </nav>
+
+      <div class="bottom-area">
+        <button id="modeToggle" class="mode-btn" title="Toggle Day/Night">🌙</button>
+        <div class="avatar">
+          <img src="https://images.unsplash.com/photo-1763539818641-23ff6ad2654d?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="profile">
+        </div>
+      </div>
+    </aside>
+
+    <main class="container">
+
+      <!-- Row 1 -->
+      <section class="top-row">
+        <!-- Current large card -->
+        <article class="card current-card">
+          <div class="current-left">
+            <div id="mainIcon" class="main-icon"></div>
+            <div class="main-temp">
+              <div id="mainTemp" class="temp">--°</div>
+              <div class="meta">
+                <div id="mainCond" class="cond">—</div>
+                <div id="mainLoc" class="loc">—</div>
+                <div id="mainTime" class="time">—</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="current-right">
+            <div class="controls-row">
+              <div class="unit-toggle">
+                <button id="degC" class="deg active">C°</button>
+                <button id="degF" class="deg">F°</button>
+              </div>
+
+              <div class="search">
+                <input id="cityInput" placeholder="Search city (e.g. Mumbai)" />
+                <button id="searchBtn">Search</button>
+              </div>
+            </div>
+
+            <div id="smallSummary" class="summary-grid">
+              <div class="small widget">
+                <div class="label">Humidity</div><div id="wHumidity" class="value">—</div>
+              </div>
+              <div class="small widget">
+                <div class="label">Wind</div><div id="wWind" class="value">—</div>
+              </div>
+              <div class="small widget">
+                <div class="label">UV Index</div><div id="wUV" class="value">—</div>
+              </div>
+              <div class="small widget">
+                <div class="label">Visibility</div><div id="wVis" class="value">—</div>
+              </div>
+            </div>
+
+            <div id="error" class="error" hidden></div>
+            <div id="loader" class="loader" hidden>Loading…</div>
+          </div>
+        </article>
+
+        <!-- Today's highlight widgets (3x2) -->
+        <aside class="card highlights">
+          <div class="small-high"> 
+            <h4>Wind Status</h4>
+            <div id="hsWind" class="highlight-value">—</div>
+          </div>
+          <div class="small-high">
+            <h4>UV Index</h4>
+            <div id="hsUV" class="highlight-value">—</div>
+          </div>
+          <div class="small-high">
+            <h4>Sunrise & Sunset</h4>
+            <div id="hsSun" class="highlight-value">—</div>
+          </div>
+          <div class="small-high">
+            <h4>Humidity</h4>
+            <div id="hsHum" class="highlight-value">—</div>
+          </div>
+          <div class="small-high">
+            <h4>Visibility</h4>
+            <div id="hsVis" class="highlight-value">—</div>
+          </div>
+          <div class="small-high">
+            <h4>Feels Like</h4>
+            <div id="hsFeels" class="highlight-value">—</div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- Row 2 -->
+      <section class="bottom-row">
+        <!-- Forecast -->
+        <article class="card forecast-card">
+          <div class="forecast-header">
+            <h3>7 days Forecast</h3>
+            <div class="forecast-controls">
+              <select id="forecastRange"><option>7 day</option><option>14 day</option></select>
+              <div class="last">Last: <span id="lastCity">—</span></div>
+            </div>
+          </div>
+
+          <div id="forecastList" class="forecast-list" aria-live="polite">
+            <!-- JS fills items -->
+          </div>
+        </article>
+
+        <!-- Map / condition panel -->
+        <article class="card map-card">
+          <div class="map-header">
+            <h3>Weather condition map</h3>
+            <div class="map-controls">
+              <select id="mapHours"><option>24 hr</option><option>48 hr</option></select>
+            </div>
+          </div>
+
+          <div id="mapPanel" class="map-panel"> <!-- animated gradient + hold map SVG later -->
+            <div id="mapLegend" class="legend">Precipitation • Light → Heavy</div>
+          </div>
+
+          <canvas id="weekChart" class="week-chart"></canvas>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
