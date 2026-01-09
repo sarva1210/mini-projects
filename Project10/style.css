@@ -1,0 +1,325 @@
+:root {
+    --pri: #F8F4E1;
+    --sec: #381c0a;
+    --tri1: #FEBA17;
+    --tri2: #74512D;
+    --red: red;
+    --green: rgb(9, 138, 89);
+    --blue: rgb(0, 191, 255);
+    --black: black;
+}
+
+/* -------------------- FONTS -------------------- */
+@font-face {
+    font-family: aeonik;
+    font-weight: 200;
+    src: url(./AeonikTRIAL-Light.otf);
+}
+
+@font-face {
+    font-family: aeonik;
+    font-weight: 500;
+    src: url(./AeonikTRIAL-Regular.otf);
+}
+
+@font-face {
+    font-family: aeonik;
+    font-weight: 700;
+    src: url(./AeonikTRIAL-Bold.otf);
+}
+
+/* -------------------- GLOBAL RESET -------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: aeonik;
+    color: var(--pri);
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* -------------------- MAIN -------------------- */
+#main {
+    min-height: 100vh;
+    width: 100%;
+    padding-top: 120px;
+    background-color: var(--sec);
+}
+
+/* -------------------- NAV -------------------- */
+nav {
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    width: 100%;
+    padding: 20px 40px;
+}
+
+.nav-in {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--tri2);
+    padding: 20px 30px;
+    border-radius: 10px;
+}
+
+.nav-in h2 {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.theme {
+    background-color: var(--pri);
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.theme h4 {
+    color: var(--sec);
+    font-size: 20px;
+    font-weight: 700;
+    pointer-events: none;
+}
+
+.theme:active {
+    transform: scale(0.96);
+}
+
+/* -------------------- DASHBOARD -------------------- */
+section.allElems {
+    min-height: calc(100vh - 120px);
+    padding: 40px;
+    position: relative;
+}
+
+/* -------------------- HEADER -------------------- */
+.allElems header {
+    width: 100%;
+    background-image: url(https://images.unsplash.com/photo-1717361279773-b2e7ee713d2e?q=80&w=3869);
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 40px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 50px;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.header1 h1 {
+    font-size: clamp(36px, 6vw, 80px);
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.header1 h2,
+.header1 h4 {
+    font-size: clamp(20px, 4vw, 40px);
+    font-weight: 500;
+}
+
+.header2 h2 {
+    font-size: clamp(40px, 6vw, 70px);
+    font-weight: 700;
+}
+
+.header2 h4 {
+    font-size: clamp(22px, 4vw, 40px);
+    margin-bottom: 20px;
+}
+
+.header2 h3 {
+    font-size: 18px;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+/* -------------------- FEATURES GRID -------------------- */
+.allFeatures {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.elem {
+    height: 280px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.25);
+}
+
+.elem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.elem h2 {
+    position: absolute;
+    bottom: 8%;
+    right: 6%;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.elem:active {
+    transform: scale(0.97);
+}
+
+/* -------------------- FULL PAGES -------------------- */
+.fullElem {
+    position: fixed;
+    inset: 0;
+    background-color: var(--sec);
+    padding: 40px;
+    display: none;
+    z-index: 999;
+    overflow-y: auto;
+}
+
+/* -------------------- BACK BUTTON -------------------- */
+.back {
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    background-color: var(--red);
+    border-radius: 10px;
+    padding: 15px 22px;
+    border: none;
+    font-size: 22px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.back:active {
+    transform: scale(0.97);
+}
+
+/* -------------------- TODO -------------------- */
+.todo-list-fullpage h2 {
+    font-size: 60px;
+}
+
+.todo-container {
+    height: 80%;
+    margin-top: 40px;
+    display: flex;
+    gap: 30px;
+}
+
+.addTask,
+.allTask {
+    background-color: var(--tri2);
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.addTask {
+    width: 35%;
+}
+
+.allTask {
+    width: 65%;
+    overflow-y: auto;
+}
+
+/* -------------------- DAILY PLANNER -------------------- */
+.day-planner {
+    margin-top: 40px;
+    background-color: var(--tri2);
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.day-planner-time {
+    width: 49%;
+    position: relative;
+}
+
+.day-planner-time p {
+    position: absolute;
+    top: 10%;
+    left: 3%;
+    font-size: 14px;
+    color: var(--tri1);
+}
+
+.day-planner-time input {
+    width: 100%;
+    padding: 34px 45px 20px;
+    font-size: 30px;
+    border-radius: 5px;
+    background-color: var(--sec);
+    border: none;
+    outline: none;
+}
+
+/* -------------------- MOTIVATION -------------------- */
+.motivation-container {
+    width: 80%;
+    margin: auto;
+    background-color: var(--tri1);
+    border-radius: 30px;
+    padding: 40px;
+    position: relative;
+}
+
+/* -------------------- POMODORO -------------------- */
+.pomo-timer {
+    text-align: center;
+    margin-top: 120px;
+}
+
+.pomo-timer h1 {
+    font-size: 160px;
+}
+
+.pomo-timer button {
+    background-color: var(--tri2);
+    padding: 15px 40px;
+    font-size: 30px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 7px 7px 0 var(--black);
+    font-weight: 700;
+}
+
+.pomo-timer button:active {
+    box-shadow: none;
+}
+
+/* -------------------- RESPONSIVE -------------------- */
+@media (max-width: 900px) {
+    .todo-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .addTask,
+    .allTask {
+        width: 100%;
+    }
+
+    .day-planner-time {
+        width: 100%;
+    }
+}
