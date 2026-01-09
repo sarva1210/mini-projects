@@ -9,7 +9,7 @@
     --black: black;
 }
 
-/* -------------------- FONTS -------------------- */
+/* Founts Added */
 @font-face {
     font-family: aeonik;
     font-weight: 200;
@@ -28,7 +28,7 @@
     src: url(./AeonikTRIAL-Bold.otf);
 }
 
-/* -------------------- GLOBAL RESET -------------------- */
+
 * {
     margin: 0;
     padding: 0;
@@ -45,7 +45,8 @@ body {
     overflow-y: auto;
 }
 
-/* -------------------- MAIN -------------------- */
+
+/* Main Part */
 #main {
     min-height: 100vh;
     width: 100%;
@@ -53,7 +54,8 @@ body {
     background-color: var(--sec);
 }
 
-/* -------------------- NAV -------------------- */
+
+/* Navbar */
 nav {
     position: fixed;
     top: 0;
@@ -95,14 +97,16 @@ nav {
     transform: scale(0.96);
 }
 
-/* -------------------- DASHBOARD -------------------- */
+
+/* Dashboard */
 section.allElems {
     min-height: calc(100vh - 120px);
     padding: 40px;
     position: relative;
 }
 
-/* -------------------- HEADER -------------------- */
+
+/* Header */
 .allElems header {
     width: 100%;
     background-image: url(https://images.unsplash.com/photo-1717361279773-b2e7ee713d2e?q=80&w=3869);
@@ -146,7 +150,8 @@ section.allElems {
     opacity: 0.8;
 }
 
-/* -------------------- FEATURES GRID -------------------- */
+
+/* Grid Features */
 .allFeatures {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -181,7 +186,8 @@ section.allElems {
     transform: scale(0.97);
 }
 
-/* -------------------- FULL PAGES -------------------- */
+
+/* Full Page */
 .fullElem {
     position: fixed;
     inset: 0;
@@ -192,7 +198,8 @@ section.allElems {
     overflow-y: auto;
 }
 
-/* -------------------- BACK BUTTON -------------------- */
+
+/* Back Button */
 .back {
     position: absolute;
     right: 5%;
@@ -210,7 +217,8 @@ section.allElems {
     transform: scale(0.97);
 }
 
-/* -------------------- TODO -------------------- */
+
+/* TO-DO */
 .todo-list-fullpage h2 {
     font-size: 60px;
 }
@@ -238,7 +246,8 @@ section.allElems {
     overflow-y: auto;
 }
 
-/* -------------------- DAILY PLANNER -------------------- */
+
+/* daily planner */
 .day-planner {
     margin-top: 40px;
     background-color: var(--tri2);
@@ -272,7 +281,8 @@ section.allElems {
     outline: none;
 }
 
-/* -------------------- MOTIVATION -------------------- */
+
+/* Motivation */
 .motivation-container {
     width: 80%;
     margin: auto;
@@ -282,7 +292,7 @@ section.allElems {
     position: relative;
 }
 
-/* -------------------- POMODORO -------------------- */
+/* time */
 .pomo-timer {
     text-align: center;
     margin-top: 120px;
@@ -307,7 +317,8 @@ section.allElems {
     box-shadow: none;
 }
 
-/* -------------------- RESPONSIVE -------------------- */
+
+/* Responsive */
 @media (max-width: 900px) {
     .todo-container {
         flex-direction: column;
